@@ -16,6 +16,14 @@ public class JdbcCustomerRepository implements CustomerRepository {
     private final String dbUser;
     private final String dbPass;
 
+    public JdbcCustomerRepository() {
+        this(
+            System.getenv().getOrDefault("DB_URL", "jdbc:postgresql://localhost:5432/saas_db"),
+            System.getenv().getOrDefault("DB_USER", "admin"),
+            System.getenv().getOrDefault("DB_PASS", "admin123")
+        );
+    }
+
     public JdbcCustomerRepository(String dbUrl, String dbUser, String dbPass) {
         this.dbUrl = dbUrl;
         this.dbUser = dbUser;

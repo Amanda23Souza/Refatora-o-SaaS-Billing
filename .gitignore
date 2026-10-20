@@ -1,4 +1,10 @@
-out/
 *.class
+out/
+target/
+bin/
 .idea/
 *.iml
+.vscode/
+.settings/
+.project
+.classpath
